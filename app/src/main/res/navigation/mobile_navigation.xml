@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myfarmer.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_AcceptAccount"
+            app:destination="@id/nav_AcceptAccount" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_CreateAccount"
+            app:destination="@id/nav_CreateAccount" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_RemoveAccount"
+            app:destination="@id/nav_RemoveAccount" />
+        <action
+            android:id="@+id/action_nav_home_to_informationFragment"
+            app:destination="@id/nav_informationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_AcceptAccount"
+        android:name="com.example.myfarmer.ui.AcceptAccount.AcceptAccountFragment"
+        android:label="Accept Account"
+        tools:layout="@layout/fragment_acceptaccount" >
+        <action
+            android:id="@+id/action_nav_AcceptAccount_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_CreateAccount"
+        android:name="com.example.myfarmer.ui.CreateAccount.CreateAccountFragment"
+        android:label="Create Account"
+        tools:layout="@layout/fragment_createaccount" >
+        <action
+            android:id="@+id/action_nav_CreateAccount_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_RemoveAccount"
+        android:name="com.example.myfarmer.ui.RemoveAccount.RemoveAccountFragment"
+        android:label="Remove Account"
+        tools:layout="@layout/fragment_remove_account" >
+        <action
+            android:id="@+id/action_nav_RemoveAccount_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_informationFragment"
+        android:name="com.example.myfarmer.ui.infomation.InformationAdminFragment"
+        android:label="Admin Information"
+        tools:layout="@layout/fragment_information" >
+        <action
+            android:id="@+id/action_nav_informationFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+</navigation>

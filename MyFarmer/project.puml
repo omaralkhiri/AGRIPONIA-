@@ -1,0 +1,359 @@
+@startuml
+class com.example.myfarmer.EngFarActivity {
+- AppBarConfiguration mAppBarConfiguration
+- ActivityEngfarBinding binding
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onSupportNavigateUp()
+}
+class com.example.myfarmer.ui.information2.information2Fragment {
+- RequestQueue queue
+- String URL
+- TextView txtName
+- EditText txtPHone
+~ String id
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void GETinformation(String)
+}
+class com.example.myfarmer.SignUp_Activity {
+~ EditText txtname
+~ Spinner job
+~ String name
+~ RadioButton maleradio
+~ String Url
+~ AlertDialog.Builder alert
+~ AwesomeValidation awesomeValidation
+# void onCreate(Bundle)
+}
+class com.example.myfarmer.ui.Show.ShowAdapter {
+- Context context
+- List<Aquarium> aquariumList
++ ShowViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ShowViewHolder,int)
++ int getItemCount()
+}
+class com.example.myfarmer.ui.Show.ShowAdapter.ShowViewHolder {
+- Movie movie
+- ImageView fishImageView
+- TextView dateAndtimeTextView
++ void setValues(Aquarium)
+}
+class com.example.myfarmer.AdminActivity {
+- AppBarConfiguration mAppBarConfiguration
+- ActivityAdminBinding binding
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onSupportNavigateUp()
+}
+class com.example.myfarmer.ui.aquariumandplantpool.AquariumAdapter {
+- Context context
+- List<Aquarium> aquariumList
++ AquariumViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(AquariumViewHolder,int)
++ int getItemCount()
+}
+class com.example.myfarmer.ui.aquariumandplantpool.AquariumAdapter.AquariumViewHolder {
+- ImageView aquariumImageView
+- TextView nameTextView
++ void setValues(Aquarium)
+}
+class com.example.myfarmer.ui.AcceptAccount.AcceptAccountFragment {
+- RecyclerView recyclerView
+- acceptAdapter adapter
+- List<Users> usersList
+- RequestQueue queue
+- String URL
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void builduserlist(JSONObject)
+- void filter(String)
+}
+class com.example.myfarmer.ui.Show.ShowAllInfoFishFragment {
+- RecyclerView recyclerView
+- ShowAdapter adapter
+- List<Aquarium> aquariumList
+- RequestQueue queue
+- String URL
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void buildaquariumlist(JSONObject)
+}
+class com.example.myfarmer.ui.RemoveAccount.RemoveAccountFragment {
+- RecyclerView recyclerView
+- RemoveAdapter adapter
+- List<Users> usersList
+- RequestQueue queue
+- String URL
+- SwipeRefreshLayout swipeRefreshLayout
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void filter(String)
++ void buildusersList(JSONObject)
+- void request()
+}
+class com.example.myfarmer.GlassHouse {
+- int id
+- String glasshousename
++ int getId()
++ void setId(int)
++ String getGlasshousename()
++ void setGlasshousename(String)
+}
+class com.example.myfarmer.ui.GlassHouse.glassAdapter {
+- Context context
+- List<GlassHouse> glassList
++ glassViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(glassViewHolder,int)
++ int getItemCount()
+}
+class com.example.myfarmer.ui.GlassHouse.glassAdapter.glassViewHolder {
+- ImageView glassImageView
+- TextView titleTextView
+- Button information
++ void setValues(GlassHouse)
+}
+class com.example.myfarmer.ui.allDATA.DataAdapter {
+- Context context
+- List<DataTH> dataList
++ DataViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(DataViewHolder,int)
++ int getItemCount()
++ void filterList(ArrayList<DataTH>)
+}
+class com.example.myfarmer.ui.allDATA.DataAdapter.DataViewHolder {
+- TextView txtdate
++ void setValues(DataTH)
+}
+class com.example.myfarmer.ui.CreateAccount.CreateAccountFragment {
+~ EditText txtname
+~ Spinner job
+~ String name
+~ RadioButton maleradio
+~ String Url
+~ AlertDialog.Builder alert
+~ AwesomeValidation awesomeValidation
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onDestroyView()
+}
+class com.example.myfarmer.ui.RemoveAccount.RemoveAdapter {
+- Context context
+- List<Users> UsersList
+- RequestQueue queue
++ userViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(userViewHolder,int)
++ int getItemCount()
++ void filterList(ArrayList<Users>)
+}
+class com.example.myfarmer.ui.RemoveAccount.RemoveAdapter.userViewHolder {
+- TextView nameuser
+- Button remove
+~ ImageView image1
++ void setValues(Users)
+}
+class com.example.myfarmer.ui.allDATA.DataFragment {
+- RecyclerView recyclerView
+- DataAdapter adapter
+- List<DataTH> DATAList
+- RequestQueue queue
+- String URL
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void buildDATAlist(JSONObject)
+- void filter(String)
+}
+class com.example.myfarmer.ui.allDATA.DataTH {
+- String date
+- String time
+- String temperature
+- String Humidity
++ String getDate()
++ void setDate(String)
++ String getTime()
++ void setTime(String)
++ String getTemperature()
++ void setTemperature(String)
++ String getHumidity()
++ void setHumidity(String)
+}
+class com.example.myfarmer.Login_Activity {
+- AlertDialog.Builder alert
+~ String job
+~ String URL
+~ RequestQueue queue
+~ AwesomeValidation awesomeValidation
+# void onCreate(Bundle)
+- void checkjob(String)
+}
+class com.example.myfarmer.ui.home.HomeFragment {
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onDestroyView()
+}
+class com.example.myfarmer.Users {
+- int id
+- String name
+- String gender
+- String birthday
+- String phone
+- String email
+- String job
++ int getId()
++ void setId(int)
++ String getName()
++ void setName(String)
++ String getGender()
++ void setGender(String)
++ String getBirthday()
++ void setBirthday(String)
++ String getPhone()
++ void setPhone(String)
++ String getEmail()
++ void setEmail(String)
++ String getJob()
++ void setJob(String)
+}
+class com.example.myfarmer.SplachScreen {
+# void onCreate(Bundle)
+}
+class com.example.myfarmer.ui.aquariumandplantpool.PlantAdapter {
+- Context context
+- List<Plant> plantList
++ PlantViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(PlantViewHolder,int)
++ int getItemCount()
+}
+class com.example.myfarmer.ui.aquariumandplantpool.PlantAdapter.PlantViewHolder {
+- ImageView plantImageView
+- TextView titleTextView
++ void setValues(Plant)
+}
+class com.example.myfarmer.ui.GlassHouse.GlassHouseFragment {
+- RecyclerView recyclerView
+- glassAdapter adapter
+- List<GlassHouse> glassHouseList
+- RequestQueue queue
+~ String URL
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void buildglasshouselist(JSONObject)
+}
+class com.example.myfarmer.info {
+- {static} String IpAddress
+- {static} String phone
+- {static} String id
+- {static} int house_id
+- {static} int fish_id
++ {static} int getFish_id()
++ {static} void setFish_id(int)
++ {static} int getHouse_id()
++ {static} void setHouse_id(int)
++ {static} String getIpAddress()
++ {static} String getPhone()
++ {static} void setPhone(String)
++ {static} String getId()
++ {static} void setId(String)
+}
+class com.example.myfarmer.ui.infomation.InformationAdminFragment {
+- RequestQueue queue
+- String URL
+- TextView txtName
+- EditText txtPHone
+~ String id
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void GETinformation(String)
+}
+class com.example.myfarmer.Aquarium {
+- int fishid
+- String fishname
+- String time
+- String temperature
+- String humidity
+- String date
++ int getFishid()
++ void setFishid(int)
++ String getFishname()
++ void setFishname(String)
++ String getTime()
++ void setTime(String)
++ String getTemperature()
++ void setTemperature(String)
++ String getHumidity()
++ void setHumidity(String)
++ String getDate()
++ void setDate(String)
+}
+class com.example.myfarmer.Plant {
+- int id
+- String plantname
++ int getId()
++ void setId(int)
++ String getPlantname()
++ void setPlantname(String)
+}
+class com.example.myfarmer.ui.AcceptAccount.acceptAdapter {
+- Context context
+- List<Users> usersList
+- RequestQueue queue
++ accept_rejectViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(accept_rejectViewHolder,int)
++ int getItemCount()
++ void filterList(ArrayList<Users>)
+}
+class com.example.myfarmer.ui.AcceptAccount.acceptAdapter.accept_rejectViewHolder {
+- TextView username
+- ImageView imgtrue
+- String URL
+- String URL1
+- String id
++ void setValues(Users)
+}
+class com.example.myfarmer.ui.aquariumandplantpool.aquandplanFragment {
+- RecyclerView recyclerView1
+- PlantAdapter adapter1
+- AquariumAdapter adapter2
+- List<Plant> plantList
+- List<Aquarium> aquariumsList
+- RequestQueue queue
+~ String temp
+~ String URL
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void buildplantlist(JSONObject)
++ void buildaquariumlist(JSONObject)
+}
+class com.example.myfarmer.ui.home2.Home2Fragment {
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.myfarmer.EngFarActivity
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.information2.information2Fragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.myfarmer.SignUp_Activity
+com.example.myfarmer.ui.Show.Adapter <|-- com.example.myfarmer.ui.Show.ShowAdapter
+com.example.myfarmer.ui.Show.ShowAdapter +.. com.example.myfarmer.ui.Show.ShowAdapter.ShowViewHolder
+com.example.myfarmer.ui.Show.ViewHolder <|-- com.example.myfarmer.ui.Show.ShowAdapter.ShowViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.myfarmer.AdminActivity
+com.example.myfarmer.ui.aquariumandplantpool.Adapter <|-- com.example.myfarmer.ui.aquariumandplantpool.AquariumAdapter
+com.example.myfarmer.ui.aquariumandplantpool.AquariumAdapter +.. com.example.myfarmer.ui.aquariumandplantpool.AquariumAdapter.AquariumViewHolder
+com.example.myfarmer.ui.aquariumandplantpool.ViewHolder <|-- com.example.myfarmer.ui.aquariumandplantpool.AquariumAdapter.AquariumViewHolder
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.AcceptAccount.AcceptAccountFragment
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.Show.ShowAllInfoFishFragment
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.RemoveAccount.RemoveAccountFragment
+com.example.myfarmer.ui.GlassHouse.Adapter <|-- com.example.myfarmer.ui.GlassHouse.glassAdapter
+com.example.myfarmer.ui.GlassHouse.glassAdapter +.. com.example.myfarmer.ui.GlassHouse.glassAdapter.glassViewHolder
+com.example.myfarmer.ui.GlassHouse.ViewHolder <|-- com.example.myfarmer.ui.GlassHouse.glassAdapter.glassViewHolder
+com.example.myfarmer.ui.allDATA.Adapter <|-- com.example.myfarmer.ui.allDATA.DataAdapter
+com.example.myfarmer.ui.allDATA.DataAdapter +.. com.example.myfarmer.ui.allDATA.DataAdapter.DataViewHolder
+com.example.myfarmer.ui.allDATA.ViewHolder <|-- com.example.myfarmer.ui.allDATA.DataAdapter.DataViewHolder
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.CreateAccount.CreateAccountFragment
+com.example.myfarmer.ui.RemoveAccount.Adapter <|-- com.example.myfarmer.ui.RemoveAccount.RemoveAdapter
+com.example.myfarmer.ui.RemoveAccount.RemoveAdapter +.. com.example.myfarmer.ui.RemoveAccount.RemoveAdapter.userViewHolder
+com.example.myfarmer.ui.RemoveAccount.ViewHolder <|-- com.example.myfarmer.ui.RemoveAccount.RemoveAdapter.userViewHolder
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.allDATA.DataFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.myfarmer.Login_Activity
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.home.HomeFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.myfarmer.SplachScreen
+com.example.myfarmer.ui.aquariumandplantpool.Adapter <|-- com.example.myfarmer.ui.aquariumandplantpool.PlantAdapter
+com.example.myfarmer.ui.aquariumandplantpool.PlantAdapter +.. com.example.myfarmer.ui.aquariumandplantpool.PlantAdapter.PlantViewHolder
+com.example.myfarmer.ui.aquariumandplantpool.ViewHolder <|-- com.example.myfarmer.ui.aquariumandplantpool.PlantAdapter.PlantViewHolder
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.GlassHouse.GlassHouseFragment
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.infomation.InformationAdminFragment
+com.example.myfarmer.ui.AcceptAccount.Adapter <|-- com.example.myfarmer.ui.AcceptAccount.acceptAdapter
+com.example.myfarmer.ui.AcceptAccount.acceptAdapter +.. com.example.myfarmer.ui.AcceptAccount.acceptAdapter.accept_rejectViewHolder
+com.example.myfarmer.ui.AcceptAccount.ViewHolder <|-- com.example.myfarmer.ui.AcceptAccount.acceptAdapter.accept_rejectViewHolder
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.aquariumandplantpool.aquandplanFragment
+androidx.fragment.app.Fragment <|-- com.example.myfarmer.ui.home2.Home2Fragment
+@enduml

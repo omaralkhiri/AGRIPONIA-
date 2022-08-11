@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@id/nav_Home">
+    <fragment
+        android:id="@+id/nav_GlassHouse"
+        android:name="com.example.myfarmer.ui.GlassHouse.GlassHouseFragment"
+        android:label="Glass House"
+        tools:layout="@layout/fragment_glass_house" >
+        <action
+            android:id="@+id/action_nav_GlassHouse_to_aquandplanFragment"
+            app:destination="@id/aquandplanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_Information2"
+        android:name="com.example.myfarmer.ui.information2.information2Fragment"
+        android:label="Information"
+        tools:layout="@layout/fragment_information2" />
+    <fragment
+        android:id="@+id/nav_Home"
+        android:name="com.example.myfarmer.ui.home2.Home2Fragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home2" >
+        <action
+            android:id="@+id/action_home2Fragment_to_information2Fragment"
+            app:destination="@id/nav_Information2" />
+        <action
+            android:id="@+id/action_home2Fragment_to_glassHouseFragment"
+            app:destination="@id/nav_GlassHouse" />
+    </fragment>
+    <fragment
+        android:id="@+id/aquandplanFragment"
+        android:name="com.example.myfarmer.ui.aquariumandplantpool.aquandplanFragment"
+        android:label="Glass house contents"
+        tools:layout="@layout/fragment_aquandplan" >
+        <action
+            android:id="@+id/action_aquandplanFragment_to_showAllInfoFishFragment"
+            app:destination="@id/showAllInfoFishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showAllInfoFishFragment"
+        android:name="com.example.myfarmer.ui.Show.ShowAllInfoFishFragment"
+        android:label="fragment_show_all_info_fish"
+        tools:layout="@layout/fragment_show_all_info_fish" >
+        <action
+            android:id="@+id/action_showAllInfoFishFragment_to_dataFragment"
+            app:destination="@id/dataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.myfarmer.ui.allDATA.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data" />
+</navigation>
